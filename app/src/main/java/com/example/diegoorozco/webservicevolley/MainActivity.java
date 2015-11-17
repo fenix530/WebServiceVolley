@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }, 0, 0, ImageView.ScaleType.CENTER_CROP, Bitmap.Config.ARGB_8888, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("Conxion Fallida","Error Respuesta en JSON: " + error.getMessage()); // que se hace si hay error
+                        Toast.makeText(getApplication(), "Error:"+error.getMessage(),Toast.LENGTH_LONG).show(); // que se hace si hay error
                     }
                 }
                 );
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.d("Conxion Fallida","Error Respuesta en JSON: " + error.getMessage()); // que se hace si hay error
+                        Toast.makeText(getApplication(), "Error:"+error.getMessage(),Toast.LENGTH_LONG).show(); // que se hace si hay error
                     }
                 });
                 request.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
