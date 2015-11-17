@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WebServiceVolley</string>
+    <string name="bDescar">Descargar Imagen</string>
+    <string name="bText">Descargar Texto</string>
+</resources>
