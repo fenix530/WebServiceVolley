@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 );
                 imageRequest.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));//politica de reintentos
-
                 requestQueue.add(imageRequest); //mandando peticion a la calo para que se ejecutada
             }
         });
@@ -66,28 +65,19 @@ public class MainActivity extends AppCompatActivity {
                 StringRequest request= new StringRequest(url1, new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Text.setText(response);
+                        Text.setText(response); // tratamiento de la respuesta obtenida
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Log.d("Conxion Fallida","Error Respuesta en JSON: " + error.getMessage()); // que se hace si hay error
                     }
                 });
                 request.setRetryPolicy(new DefaultRetryPolicy(DefaultRetryPolicy.DEFAULT_TIMEOUT_MS, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
                 requestQueue.add(request);
-
             }
 
         });
-
-
     }
-
-
-
-
-
-
     }
 
