@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         final RequestQueue requestQueue = Volley.newRequestQueue(this); // creando cola de peticiones
 
-        final int SIMPLE_REQUEST = 1;
+
         final String url = "https://dl.dropboxusercontent.com/s/u859m74wwhhzv72/logo-universidad-de-antioquia.png?dl=0"; // url para descargar contenido
 
         final Button bDescargar=(Button) findViewById(R.id.bDescarga);
